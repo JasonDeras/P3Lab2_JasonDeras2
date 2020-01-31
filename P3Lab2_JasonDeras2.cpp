@@ -22,7 +22,7 @@ int menu(){
 
 }//Fin del metodo del menu
 
-int mdc(int a,int b){
+int Ejercicio1(int a,int b){
 
         if (a<b) {
             cout<<a;
@@ -31,7 +31,7 @@ int mdc(int a,int b){
             return 1+mdc(a,b-a);
         }
 
-}//Fin del me maximo comun divisior
+}//Fin del maximo comun divisior
 
 void Ejercicio2(int size){
 	
@@ -47,7 +47,8 @@ void Ejercicio2(int size){
         for(int j=0;j<size;++j){
 		cout<<arreglo[j]<<endl;
 	}//Fin del for de la impresion
-          
+        cout<<"\n\n\n";
+
 	sort(arreglo,size);
 	
 	cout<<"Arreglo ordenado"<<endl;
@@ -55,7 +56,8 @@ void Ejercicio2(int size){
         for(int j=0;j<size;++j){
                 cout<<arreglo[j]<<endl;
         }//Fin del for de la impresion
-
+	
+	cout<<"\n\n\n\n";
 	delete[] arreglo;
 
 }//Fin del metodo del segundo ejercicio
@@ -137,6 +139,11 @@ int main(){
 			break;
 
 			case 3:
+				int numero;
+
+				cout<<"Ingrese un numero: ";
+				cin>>numero;
+
 			break;		
 		}//Fin del case de las opciones
 
