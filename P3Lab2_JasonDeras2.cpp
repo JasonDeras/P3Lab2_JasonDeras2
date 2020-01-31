@@ -87,6 +87,7 @@ void sort(int* arreglo, int index){
 void Ejercicio3(int numero){
 
 	int u=0,d=0,c=0,m=0,restante,auxiliar,maximo1=0,maximo2,maximo3,maximo4,maximo,minimo,control;
+	int contador=1;
 
     if(numero>999 && numero <=9999){
 	    
@@ -148,7 +149,10 @@ void Ejercicio3(int numero){
 
    maximo=maximo1*1000+maximo2*100+maximo3*10+maximo4;
    minimo=maximo4*1000+maximo3*100+maximo2*10+maximo1;
+
+   cout<<contador<<". ";
    printf("%d - %d= %d \n",maximo,minimo,maximo-minimo);
+   contador++;
    control++;
    numero=maximo-minimo;
 
