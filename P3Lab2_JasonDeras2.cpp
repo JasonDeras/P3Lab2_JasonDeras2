@@ -114,35 +114,38 @@ void Ejercicio3(int numero){
      			   }//Fin del switch
      			numero/=10;
     		 }//Fin del while que separa el numero
-     m=numero;//ultimo digito
+     
+		    m=numero;//ultimo digito
      //ordenando numero
-     max1=u; max2=d; max3=c; max4=m;
-     if (max1!=max2||max2!=max3||max3!=max4 )// digitos diferentes
-     {
-     int k=0;
-      do
-      {
-         if (max1<=max2)
-            {
-                aux=max1;
+     maximo1=u; maximo2=d; maximo3=c; maximo4=m;
+     
+     //Verificando que los numeros sean distinos
+     if (maximo1!=maximo2||maximo2!=maximo3||maximo3!=maximo4 ){
+     		int k=0;
+      do{
+         if (maximo1<=maximo2){
+                auxiliar=maximo1;
                 max1=max2;
                 max2=aux;
-            }
-            if(max1>=max2 && max2 <= max3 )
-             {
+            }//Fin del primer if 
+
+            if(max1>=max2 && max2 <= max3 ){
                  aux=max2;
                  max2=max3;
                  max3=aux;
-               }
-            if (max1>=max2 && max2 >=max3 && max3<=max4)
-             {
+               }//Fin del segundo if
+
+            if (max1>=max2 && max2 >=max3 && max3<=max4){
                  aux=max3;
                  max3=max4;
                  max4=aux;
-                      }
+             }//Fin del tercer if 
              k++;
-                      }
-   while(k<=3);
+                     
+      }while(k<=3);
+      //Fin del do while 
+
+
    max=max1*1000+max2*100+max3*10+max4;
    min=max4*1000+max3*100+max2*10+max1;
    printf("%d - %d= %d \n",max,min,max-min);
@@ -162,8 +165,6 @@ else
 else
 {
     printf ("Error: Elnumero no es de 4 digitos");
-}
-getch();
 }
 
 
