@@ -10,7 +10,7 @@ int menu(){
 
 	int opcion;//Variable de las opciones del menu
 
-	cout<<"Menu\n\n";
+	cout<<"Menu\n";
 	cout<<"1. Ejercicio 1"<<endl;
 	cout<<"2. Ejercicio 2"<<endl;
 	cout<<"3. Elercicio 3"<<endl;
@@ -163,7 +163,7 @@ void Ejercicio3(int numero){
 
    	if(numero==6174)
    		control=9;
-  	else(1000);
+	else(1000);
      	}
      
     	 else{
