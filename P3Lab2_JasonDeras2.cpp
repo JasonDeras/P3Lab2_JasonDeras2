@@ -125,20 +125,20 @@ void Ejercicio3(int numero){
       do{
          if (maximo1<=maximo2){
                 auxiliar=maximo1;
-                max1=max2;
-                max2=aux;
+                maximo1=maximo2;
+                maximo2=auxiliar;
             }//Fin del primer if 
 
-            if(max1>=max2 && max2 <= max3 ){
-                 aux=max2;
-                 max2=max3;
-                 max3=aux;
+            if(maximo1>=maximo2 && maximo2 <= maximo3 ){
+                 auxiliar=maximo2;
+                 maximo2=maximo3;
+                 maximo3=auxiliar;
                }//Fin del segundo if
 
-            if (max1>=max2 && max2 >=max3 && max3<=max4){
-                 aux=max3;
-                 max3=max4;
-                 max4=aux;
+            if (maximo1>=maximo2 && maximo2 >=maximo3 && maximo3<=maximo4){
+                 auxiliar=maximo3;
+                 maximo3=maximo4;
+                 maximo4=auxiliar;
              }//Fin del tercer if 
              k++;
                      
@@ -146,31 +146,28 @@ void Ejercicio3(int numero){
       //Fin del do while 
 
 
-   max=max1*1000+max2*100+max3*10+max4;
-   min=max4*1000+max3*100+max2*10+max1;
-   printf("%d - %d= %d \n",max,min,max-min);
-   ctr++;
-   numero=max-min;
+   maximo=maximo1*1000+maximo2*100+maximo3*10+maximo4;
+   minimo=maximo4*1000+maximo3*100+maximo2*10+maximo1;
+   printf("%d - %d= %d \n",maximo,minimo,maximo-minimo);
+   control++;
+   numero=maximo-minimo;
+
    if(numero==6174)
-   ctr=9;
+   control=9;
   else(1000);
-}
-else
-{
-    printf ("Error:Los numeros son iguales ");
-    ctr=9;
-}
-}while(ctr<=7);
-}
-else
-{
-    printf ("Error: Elnumero no es de 4 digitos");
-}
+     }
+     
+     else{
+    	cout<<"Los numeros son iguales\n\n\n";
+    	control=9;
+	}
 
+}while(control<=7);
+//Fin del do while mas grande
 
-
-
-
+}else{
+    cout<<"El numero no es de cuatro digitos\n\n\n";
+	}//If que valida el numero
 
 }//Fin del metodo del tercer ejercicio
 
