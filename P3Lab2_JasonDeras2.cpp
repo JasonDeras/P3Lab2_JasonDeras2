@@ -1,5 +1,6 @@
-#include <iostream>
-#include <cstdlib>
+#include <stdlib.h>
+#include <time.h>
+#include<iostream>
 #include <array>
 
 using namespace std;
@@ -33,11 +34,12 @@ int mdc(int a,int b){
 }//Fin del me maximo comun divisior
 
 void Ejercicio2(int size){
-
+	
+	srand(time(NULL));
 	int* arreglo=new int[size];
 
 	for(int i=0;i<size;++i){
-		arreglo[i]=(rand()%99);
+		arreglo[i]=rand()%100;
 	}//Fin del for del llenado 
 		
 
@@ -54,22 +56,27 @@ void Ejercicio2(int size){
                 cout<<arreglo[j]<<endl;
         }//Fin del for de la impresion
 
-	delete arreglo[];
+	delete[] arreglo;
+
 }//Fin del metodo del segundo ejercicio
 
-void sort(int* arr, int n){
-        if (n == 1)
+void sort(int* arreglo, int index){
+
+	//Caso base
+        if (index == 1)
             return;
 
-        for (int i=0; i<n-1; i++)
-            if (arr[i] > arr[i+1])
-            {
-                int temp = arr[i];
-                arr[i] = arr[i+1];
-                arr[i+1] = temp;
-            }
+        for (int i=0; i<index-1; i++)
 
-        sort(arr, n-1);
+            if (arreglo[i] > arreglo[i+1]){
+                
+		int temp = arreglo[i];
+                arreglo[i] = arreglo[i+1];
+                arreglo[i+1] = temp;
+
+            }//Fin del if
+
+        sort(arreglo, index-1);
 
 }//Fin del metodo para ordenar el arreglo
 
