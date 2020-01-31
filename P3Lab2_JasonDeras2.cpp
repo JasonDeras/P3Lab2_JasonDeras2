@@ -86,91 +86,96 @@ void sort(int* arreglo, int index){
 
 void Ejercicio3(int numero){
 
-	int u=0,d=0,c=0,m=0,restante,auxiliar,maximo1=0,maximo2,maximo3,maximo4,maximo,minimo,control;
-	int contador=1;
+	int unidades=0,decenas=0,centenas=0,millares=0,restante,auxiliar,maximo1=0,maximo2,maximo3,maximo4,maximo,minimo,control;
+	int contador=1;//El calculo que ha hecho
 
     if(numero>999 && numero <=9999){
 	    
 	    do{
 		    restante=0; control=0;
 		    //separando numero
-		    auxiliar=0;u=0;d=0;c=0;m=0;
+		    auxiliar=0;unidades=0;decenas=0;centenas=0;millares=0;
 
 		    while(numero>10){
+
 			    restante=numero%10;
 			    
 			    switch(auxiliar){
 
 				    case 0:{
-					u=restante;auxiliar ++ ;
+					unidades=restante;auxiliar ++ ;
 				    break;}//Fin del case 0
 
 				    case 1:{
-					 d=restante;auxiliar ++ ;
+					 decenas=restante;auxiliar ++ ;
 				    break;}//Fin del case 1
 
 				    case 2:{
-					c=restante;auxiliar ++ ; 
+					centenas=restante;auxiliar ++ ; 
 		 		    break;}//Fin del case 2
      			   }//Fin del switch
+
      			numero/=10;
+
     		 }//Fin del while que separa el numero
      
-		    m=numero;//ultimo digito
-     //ordenando numero
-     maximo1=u; maximo2=d; maximo3=c; maximo4=m;
+		millares=numero;//ultimo digito
+
+	//ordenando numero
+    	 maximo1=unidades; maximo2=decenas; maximo3=centenas; maximo4=millares;
      
-     //Verificando que los numeros sean distinos
-     if (maximo1!=maximo2||maximo2!=maximo3||maximo3!=maximo4 ){
+     	//Verificando que los numeros sean distinos
+     	if (maximo1!=maximo2||maximo2!=maximo3||maximo3!=maximo4 ){
      		int k=0;
-      do{
-         if (maximo1<=maximo2){
-                auxiliar=maximo1;
-                maximo1=maximo2;
-                maximo2=auxiliar;
-            }//Fin del primer if 
 
-            if(maximo1>=maximo2 && maximo2 <= maximo3 ){
-                 auxiliar=maximo2;
-                 maximo2=maximo3;
-                 maximo3=auxiliar;
-               }//Fin del segundo if
+      	do{
+        	 if (maximo1<=maximo2){
+                	auxiliar=maximo1;
+                	maximo1=maximo2;
+                	maximo2=auxiliar;
+            	 }//Fin del primer if 
 
-            if (maximo1>=maximo2 && maximo2 >=maximo3 && maximo3<=maximo4){
-                 auxiliar=maximo3;
-                 maximo3=maximo4;
-                 maximo4=auxiliar;
-             }//Fin del tercer if 
-             k++;
+            	if(maximo1>=maximo2 && maximo2 <= maximo3 ){
+                	 auxiliar=maximo2;
+                 	maximo2=maximo3;
+                 	maximo3=auxiliar;
+                }//Fin del segundo if
+
+            	if (maximo1>=maximo2 && maximo2 >=maximo3 && maximo3<=maximo4){
+                	auxiliar=maximo3;
+                 	maximo3=maximo4;
+                 	maximo4=auxiliar;
+            	 }//Fin del tercer if 
+             	k++;
                      
-      }while(k<=3);
-      //Fin del do while 
+      	}while(k<=3);
+     	 //Fin del do while 
 
 
-   maximo=maximo1*1000+maximo2*100+maximo3*10+maximo4;
-   minimo=maximo4*1000+maximo3*100+maximo2*10+maximo1;
+   	maximo=maximo1*1000+maximo2*100+maximo3*10+maximo4;
+   	minimo=maximo4*1000+maximo3*100+maximo2*10+maximo1;
 
-   cout<<contador<<". ";
-   printf("%d - %d= %d \n",maximo,minimo,maximo-minimo);
-   contador++;
-   control++;
-   numero=maximo-minimo;
+   	cout<<contador<<". ";
+   	printf("%d - %d= %d \n",maximo,minimo,maximo-minimo);
+   	contador++;
+   	control++;
+   	numero=maximo-minimo;
 
-   if(numero==6174)
-   control=9;
-  else(1000);
-     }
+   	if(numero==6174)
+   		control=9;
+  	else(1000);
+     	}
      
-     else{
-    	cout<<"Los numeros son iguales\n\n\n";
-    	control=9;
+    	 else{
+    		cout<<"Los numeros son iguales\n\n\n";
+    		control=9;
 	}
 
-}while(control<=7);
-//Fin del do while mas grande
+	}while(control<=7);
+	//Fin del do while mas grande
 
-}else{
-    cout<<"El numero no es de cuatro digitos\n\n\n";
+	}else{
+   		 cout<<"El numero no es de cuatro digitos\n\n\n";
 	}//If que valida el numero
 
 }//Fin del metodo del tercer ejercicio
