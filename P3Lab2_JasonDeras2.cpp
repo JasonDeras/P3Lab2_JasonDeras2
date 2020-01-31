@@ -15,27 +15,30 @@ int menu(){
 	cout<<"2. Ejercicio 2"<<endl;
 	cout<<"3. Elercicio 3"<<endl;
 	cout<<"4. Salir\n\n";
-	cout<<"Ingrese una opcion: ";
+	cout<<"Ingrese una opcion: ";	
 	cin>>opcion;
-	cout<<"\n\n\n";
+	cout<<"\n\n";
 	return opcion;
 
 }//Fin del metodo del menu
 
 int Ejercicio1(int a,int b){
 
-        if (a<b) {
-            cout<<a;
-            return 0;
-        } else {
-            return 1+mdc(a,b-a);
-        }
+	if(a<b){
+		return Ejercicio1(b,a);
+	}else if(b==0){
+		return a;
+	}else{
+		return Ejercicio1(b,a%b);
+	}
 
+  
 }//Fin del maximo comun divisior
 
 void Ejercicio2(int size){
 	
 	srand(time(NULL));
+
 	int* arreglo=new int[size];
 
 	for(int i=0;i<size;++i){
@@ -95,6 +98,7 @@ int main(){
 
 				int numero1;
 				int numero2;
+				int resultado;
 
 				cout<<"Inregres el primer numero: ";
 				cin>>numero1;
@@ -107,15 +111,19 @@ int main(){
 				}//Valida el primer numero
 
 				cout<<"Ingrese el segundo numero: ";
-				cin>>numero1;
+				cin>>numero2;
 
-				while(numero1<=0){
+				while(numero2<=0){
 					cout<<"El numero no pueder cero o menor que cero\n\n";
 				       	cout<<"Ingrese el segundo numero: ";
 					cin>>numero2;	
 				}//Valida el segundo numero
 
-				mdc(numero1,numero2);
+
+				resultado=Ejercicio1(numero1,numero2);
+
+				cout<<"mdc("<<numero1<<","<<numero2<<")="<<resultado<<"\n\n\n";
+
 
 			break;
 			
