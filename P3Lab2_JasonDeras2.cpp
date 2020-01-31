@@ -30,9 +30,8 @@ int Ejercicio1(int a,int b){
 		return a;
 	}else{
 		return Ejercicio1(b,a%b);
-	}
+	}//Fin del if del caso base
 
-  
 }//Fin del maximo comun divisior
 
 void Ejercicio2(int size){
@@ -45,11 +44,11 @@ void Ejercicio2(int size){
 		arreglo[i]=rand()%100;
 	}//Fin del for del llenado 
 		
-
 	cout<<"Arreglo Original"<<endl;
         for(int j=0;j<size;++j){
-		cout<<arreglo[j]<<endl;
+		cout<<"["<<arreglo[j]<<"]"<<endl;
 	}//Fin del for de la impresion
+
         cout<<"\n\n\n";
 
 	sort(arreglo,size);
@@ -57,7 +56,7 @@ void Ejercicio2(int size){
 	cout<<"Arreglo ordenado"<<endl;
 
         for(int j=0;j<size;++j){
-                cout<<arreglo[j]<<endl;
+                cout<<"["<<arreglo[j]<<"]"<<endl;
         }//Fin del for de la impresion
 	
 	cout<<"\n\n\n\n";
@@ -84,6 +83,95 @@ void sort(int* arreglo, int index){
         sort(arreglo, index-1);
 
 }//Fin del metodo para ordenar el arreglo
+
+void Ejercicio3(int numero){
+
+	int u=0,d=0,c=0,m=0,restante,auxiliar,maximo1=0,maximo2,maximo3,maximo4,maximo,minimo,control;
+
+    if(numero>999 && numero <=9999){
+	    
+	    do{
+		    restante=0; control=0;
+		    //separando numero
+		    auxiliar=0;u=0;d=0;c=0;m=0;
+
+		    while(numero>10){
+			    restante=numero%10;
+			    
+			    switch(auxiliar){
+
+				    case 0:{
+					u=restante;auxiliar ++ ;
+				    break;}//Fin del case 0
+
+				    case 1:{
+					 d=restante;auxiliar ++ ;
+				    break;}//Fin del case 1
+
+				    case 2:{
+					c=restante;auxiliar ++ ; 
+		 		    break;}//Fin del case 2
+     			   }//Fin del switch
+     			numero/=10;
+    		 }//Fin del while que separa el numero
+     m=numero;//ultimo digito
+     //ordenando numero
+     max1=u; max2=d; max3=c; max4=m;
+     if (max1!=max2||max2!=max3||max3!=max4 )// digitos diferentes
+     {
+     int k=0;
+      do
+      {
+         if (max1<=max2)
+            {
+                aux=max1;
+                max1=max2;
+                max2=aux;
+            }
+            if(max1>=max2 && max2 <= max3 )
+             {
+                 aux=max2;
+                 max2=max3;
+                 max3=aux;
+               }
+            if (max1>=max2 && max2 >=max3 && max3<=max4)
+             {
+                 aux=max3;
+                 max3=max4;
+                 max4=aux;
+                      }
+             k++;
+                      }
+   while(k<=3);
+   max=max1*1000+max2*100+max3*10+max4;
+   min=max4*1000+max3*100+max2*10+max1;
+   printf("%d - %d= %d \n",max,min,max-min);
+   ctr++;
+   numero=max-min;
+   if(numero==6174)
+   ctr=9;
+  else(1000);
+}
+else
+{
+    printf ("Error:Los numeros son iguales ");
+    ctr=9;
+}
+}while(ctr<=7);
+}
+else
+{
+    printf ("Error: Elnumero no es de 4 digitos");
+}
+getch();
+}
+
+
+
+
+
+
+}//Fin del metodo del tercer ejercicio
 
 int main(){
 
@@ -151,6 +239,8 @@ int main(){
 
 				cout<<"Ingrese un numero: ";
 				cin>>numero;
+
+				Ejercicio3(numero);
 
 			break;		
 		}//Fin del case de las opciones
